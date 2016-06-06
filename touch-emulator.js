@@ -140,7 +140,7 @@
             }
 
             // shiftKey has been lost, so trigger a touchend
-            if (isMultiTouch && !ev.altKey) {
+            if (isMultiTouch && !ev.ctrlKey) {
                 triggerTouch('touchend', ev);
                 isMultiTouch = false;
             }
@@ -148,7 +148,7 @@
             triggerTouch(touchType, ev);
 
             // we're entering the multi-touch mode!
-            if (!isMultiTouch && ev.altKey) {
+            if (!isMultiTouch && ev.ctrlKey) {
                 isMultiTouch = true;
                 multiTouchStartPos = {
                     pageX: ev.pageX,
